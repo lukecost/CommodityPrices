@@ -50,7 +50,7 @@ The main goal of this project is to explore whether it is possible to predict th
 - GDP
 - Consumer Sentiment (CCI)
 - S&P500 Index Returns, converted to monthly observations
-- Data collected from FRED, and Yahoo Finance. 
+- Data collected from FRED, and investing.com. 
 
 All data was relatively clean with few errors.
 
