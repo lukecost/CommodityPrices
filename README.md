@@ -86,7 +86,7 @@ Alex Outkou is a Finance and Business Information Systems double major at Lehigh
 <br>
 Michael Rich is a Financial Engineering major in Lehigh University's IBE program. He can be reached at mbr223@lehigh.edu.
 <br><br><br>
-<img src="pics/pics/luke.jpg" alt="Luke Costello" width="300"/>
+<img src="pics/pics/lukec.jpg" alt="Luke Costello" width="300"/>
 <br>
 Luke Costello is pursuing a degree in Finance at Lehigh University. He can be reached at lrc224@lehigh.edu
 <br><br><br>
