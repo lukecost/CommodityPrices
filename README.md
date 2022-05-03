@@ -20,7 +20,7 @@ Maybe you want a different website them for the project? Consider `minimal-mista
 
 ## Introduction  <a name="introduction"></a>
 
-(The "Introduction" text above is formatted in heading 2 style.) The main goal of this project is to explore *(insert project idea here)*.  
+The main goal of this project is to explore whether it is possible to predict the price of various agricultural commodities (corn, wheat, and soybeans) by using machine learning techniques on macroeconomic, weather, and financial datasets.  
 
 ## Methodology <a name="meth"></a>
 
