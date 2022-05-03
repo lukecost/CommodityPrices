@@ -4,10 +4,15 @@ This is a website to showcase our final project for FIN 377 - Data Science for F
 
 To see the complete analysis file(s) click [here](https://github.com/julioveracruz/testwebsite/blob/main/notebooks/example.ipynb).
 
+Maybe you want a different website them for the project? Consider `minimal-mistakes`:
+1. [Go here](https://github.com/mmistakes/mm-github-pages-starter/generate).
+2. In the resulting repo, click Settings, then Pages, then make sure the source is the main branch.
+3. [The doc site is here](https://mmistakes.github.io/minimal-mistakes/docs/structure/) and will help you customize layouts and figure out how to use it.
+
 ## Table of contents
 1. [Introduction](#introduction)
-2. [Methodology](#meth)
-3. [Section 2](#section2)
+2. [Research Question](#meth)
+3. [Data](#section2)
     1. [Subsection](#subsec2-1)
     2. [Subsection](#subsec2-2)
 4. [Analysis Section](#section3)
@@ -17,32 +22,38 @@ To see the complete analysis file(s) click [here](https://github.com/julioveracr
 
 The main goal of this project is to explore whether it is possible to predict the price of various agricultural commodities (corn, wheat, and soybeans) by using machine learning techniques on macroeconomic, weather, and financial datasets.  
 
-## Methodology <a name="meth"></a>
+## Research Question <a name="meth"></a>
 
-Here is some code that we used to develop our analysis. Blah Blah. [More details are provided in the Appendix](page2).
- 
-Note that for the purposes of the website, you have to copy this code into the markdown file and  
-put the code inside trip backticks with the keyword `python`.
+#### Can climate and macroeconomic indicators be used to predict the domestic prices of Corn, Wheat, Cotton, and Soybeans?
+### Sub Questions (specific research questions): 
+- Are macroeconomic data correlated with climate data? 
+- Which commodities are most easily predicted? 
+- Are there arbitrage opportunities within the futures market? 
 
-```python
-import seaborn as sns 
-iris = sns.load_dataset('iris') 
 
-print(iris.head(),  '\n---')
-print(iris.tail(),  '\n---')
-print(iris.columns, '\n---')
-print("The shape is: ",iris.shape, '\n---')
-print("Info:",iris.info(), '\n---') # memory usage, name, dtype, and # of non-null obs (--> # of missing obs) per variable
-print(iris.describe(), '\n---') # summary stats, and you can customize the list!
-print(iris['species'].value_counts()[:10], '\n---')
-print(iris['species'].nunique(), '\n---')
-```
 
 Notice that the output does NOT show! **You have to copy in figures and tables from the notebooks.**
 
-## Section <a name="section2"></a>
-Blah blah
+## Data <a name="section2"></a>
+### Commodities
+- Corn
+- Wheat
+- Soybeans
 
+### Climate Data
+- Domestic data only
+- Precipitation
+- Temperature
+- Humidity
+- CO2 concentration
+
+### Macroeconomic Data
+- Unemployment
+- Inflation (CPI)
+- Interest Rates 
+- GDP
+- Consumer Sentiment (CCI)
+- S&P500 Index Returns
 ### Subsection 1 <a name="subsec2-1"></a>
 This is a subsection, formatted in heading 3 style
 
@@ -70,7 +81,19 @@ More analysis.
 Blah blah 
 
 
+```python
+import seaborn as sns 
+iris = sns.load_dataset('iris') 
 
+print(iris.head(),  '\n---')
+print(iris.tail(),  '\n---')
+print(iris.columns, '\n---')
+print("The shape is: ",iris.shape, '\n---')
+print("Info:",iris.info(), '\n---') # memory usage, name, dtype, and # of non-null obs (--> # of missing obs) per variable
+print(iris.describe(), '\n---') # summary stats, and you can customize the list!
+print(iris['species'].value_counts()[:10], '\n---')
+print(iris['species'].nunique(), '\n---')
+```
 ## About the team
 
 <img src="pics/mike.jpg" alt="Michael Rich" width="300"/>
