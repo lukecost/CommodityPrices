@@ -78,13 +78,21 @@ Blah blah
 
 ## About the team
 
-<img src="pics/julio.jpg" alt="julio" width="300"/>
+<img src="pics/alex.jpg" alt="Alex Outkou" width="300"/>
 <br>
-Julio is a senior at Lehigh studying finance.
+Alex Outkou is a Finance and Business Information Systems double major at Lehigh University. He can be reached at ado323@lehigh.edu.
 <br><br><br>
-<img src="pics/don2.jpg" alt="don" width="300"/>
+<img src="pics/mike.jpg" alt="Michael Rich" width="300"/>
 <br>
-Don is an assistant professor at Lehigh.
+Michael Rich is a Financial Engineering major in Lehigh University's IBE program. He can be reached at mbr223@lehigh.edu.
+<br><br><br>
+<img src="pics/luke.jpg" alt="Luke Costello" width="300"/>
+<br>
+Luke Costello is pursuing a degree in Finance at Lehigh University. He can be reached at lrc224@lehigh.edu
+<br><br><br>
+<img src="pics/harry.jpg" alt="Harry Herman" width="300"/>
+<br>
+Harry Herman is a Finance major at Lehigh University. He can be reached at hsh423@lehigh.edu.
 
 
 ## More 
