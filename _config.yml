@@ -1,1 +1,3 @@
 theme: jekyll-theme-architect
+title: Commodity Prices
+description: Predicting the prices of of Corn, Wheat, and Soybean futures in the United States based on climate and macroeconomic data.
