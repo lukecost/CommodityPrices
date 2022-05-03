@@ -13,9 +13,7 @@ Maybe you want a different website them for the project? Consider `minimal-mista
 1. [Introduction](#introduction)
 2. [Research Question](#meth)
 3. [Data](#section2)
-    1. [Subsection](#subsec2-1)
-    2. [Subsection](#subsec2-2)
-4. [Analysis Section](#section3)
+4. [Project Considerations](#other)
 5. [Summary](#summary)
 
 ## Introduction  <a name="introduction"></a>
@@ -24,15 +22,11 @@ The main goal of this project is to explore whether it is possible to predict th
 
 ## Research Question <a name="meth"></a>
 
-#### Can climate and macroeconomic indicators be used to predict the domestic prices of Corn, Wheat, Cotton, and Soybeans?
+#### Can climate and macroeconomic indicators be used to predict the domestic prices of Corn, Wheat, and Soybeans?
 ### Sub Questions (specific research questions): 
 - Are macroeconomic data correlated with climate data? 
 - Which commodities are most easily predicted? 
 - Are there arbitrage opportunities within the futures market? 
-
-
-
-Notice that the output does NOT show! **You have to copy in figures and tables from the notebooks.**
 
 ## Data <a name="section2"></a>
 ### Commodities
@@ -43,9 +37,11 @@ Notice that the output does NOT show! **You have to copy in figures and tables f
 ### Climate Data
 - Domestic data only
 - Precipitation
-- Temperature
-- Humidity
-- CO2 concentration
+- Snowfall
+- Max Temperature
+- Min Temperature
+- Collected in McLean, IL; Whitman, WA; and Cass, ND
+- Data collected from https://www.ncdc.noaa.gov/
 
 ### Macroeconomic Data
 - Unemployment
@@ -53,9 +49,15 @@ Notice that the output does NOT show! **You have to copy in figures and tables f
 - Interest Rates 
 - GDP
 - Consumer Sentiment (CCI)
-- S&P500 Index Returns
-### Subsection 1 <a name="subsec2-1"></a>
-This is a subsection, formatted in heading 3 style
+- S&P500 Index Returns, converted to monthly observations
+- Data collected from FRED, and Yahoo Finance. 
+
+All data was relatively clean with few errors.
+
+## Project Considerations <a name="other"></a>
+- **Observation:** Time-Commodity 
+- **Sample period:** 1990-2019
+- **Financial Theory:** Empirical research has found that found positive historical returns together with low or even slightly negative equity-commodity correlations and positive inflation-commodity correlations. This model may help exploit this arbritrage opportunity.
 
 ### Subsection 2 <a name="subsec2-2"></a>
 This is a subsection, formatted in heading 3 style
