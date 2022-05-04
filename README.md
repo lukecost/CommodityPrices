@@ -325,7 +325,9 @@ Luke Costello is pursuing a degree in Finance at Lehigh University. He can be re
 <img src="pics/harry.jpg" alt="Harry Herman" width="300"/>
 <br>
 Harry Herman is a Finance major at Lehigh University. He can be reached at hsh423@lehigh.edu.
+<br>
+<br>
 
-
-To view the final analysis report associated with this project, click [here](https://github.com/lukecost/CommodityPrices/blob/main/part3_analysis.ipynb)
+To view the final analysis report associated with this project, click [here](https://github.com/lukecost/CommodityPrices/blob/main/part3_analysis.ipynb) 
+<br>
 To view the GitHub repo for this website, click [here](https://github.com/lukecost/CommodityPrices).
