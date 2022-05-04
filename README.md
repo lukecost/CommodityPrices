@@ -71,7 +71,7 @@ Commodities_Final['realized_ret_corn'] = (np.log(Commodities_Final['Corn_Future_
 ```
 
 ## Regression
-The file containing regressions on our data can be found [here](https://github.com/lukecost/CommodityPrices/blob/main/part1_regressions.ipynb)
+The file containing regressions on our data can be found [here](https://github.com/lukecost/CommodityPrices/blob/main/part1_regressions.ipynb).
 
 The goal of using regression on our data is to gain an initial understanding of the degree of correlation between the various independent variable in our dataset and the explanatory variables (returns of commodity futures). 
 
@@ -285,29 +285,102 @@ With all variables loaded in, the StatsModels library and API are used for regre
 
 
 ## Predictive Modeling <a name="modeling"></a>
+The file containing our predictive machine learning models can be found [here](https://github.com/lukecost/CommodityPrices/blob/main/part2_modeling.ipynb).
+
+**Step 1: Load Commodity DF, Create Holdout Set**
 We separated the data to create training and holdout sets. The training set would be used to train the model, whereas the holdout set would be used to test the accuracy of our trained model. Data from years 1990 - 2014 (80%) was used as the training data to create a model for our testing data consisting of years 2015-2019 (20%). 
 
 X variables (independent) are separated from the y variable (dependent) for the model. In this case, commodity returns are the dependent variable.
 
+**Step 2: EDA on Training Set**
+EDA was performed on all data, specifically using Pandas Profiling. Few instances of NaN values were found. The data was generally clean.  This process was instrimental in understanding the data for accurate modeling.
+
+**Step 3: Preprocess Data**
+To preprocess the data, we created a pipe that would impute numerical NaN variables with their mean, and then used StandardScaler() to scale all of our variables. Within our *preproc_pipe*, we used the following 8 independent variables within our corn model:
+
+- **'ret_gdp':** monthly return of domestic GDP
+- **'ret_cpi':** monthly return of domestic CPI (Consumer Price Index)
+- **'UNRATE':** monthly unemployment rate, domestic
+- **'C_PRCP':** monthly precipitation
+- **'C_SNOW':** monthly snow
+- **'C_TMAX':** monthly temperature (max)
+- **'C_TMIN':** monthly temperature (min)
+- **'market_risk_prem':** market risk premium (monthly)
+
+Preprocessing was repeated for wheat and soybeans.
+
+**Step 4: Create Pipeline**
+We tried a variety of models to best fit our training set. Models we tried include:
+
+- **Ridge()**
+- **Lasso()**
+- **LinearRegression()**
+- **RandomForestRegressor()**
+- **BayesianRidge()**
+- **GradientBoostingRegressor()**
+- **ElasticNet()**
+
+The following was the pipeline we used, which resulted in the best fit: 
+
+```
+gbr_pipe = Pipeline([
+                ('preproc', preproc_pipe),
+                ('feature_select', 'passthrough'),
+                ('estim', linear_model.BayesianRidge())
+                ])
+```
+
+**Step 5: Optimizing Hyperparameters | Grid Search**
+
+We found that the parameters that highly influence the BayesianRidge() Model were the following:
+
+- *1. estim__alpha_1*
+- *2. estim__alpha_2*
+- *3. estim__lambda_1*
+- *4. estim__lambda_2*
+
+Because we were predicting future returns, we needed to use a different cross validation (cv) than simply KFold(10). Specifically it was imperative that the splits for the cross validation always had newer data for the holdout set, and older data for the training set, since the entire goal of this project is to test the possibility of using financial theory, macroeconomic, and climatological data to predict *future* commodity returns. As a result, we set up a type of TimeSeriesSplit cv model. For the calculation of our **cv**, see below: 
+
+```
+groups = X_train.groupby(X_train['DATE'].dt.year).groups
+min_periods_in_train = 5
+training_expanding_window = True
+
+sorted_groups = [list(value) for (key, value) in sorted(groups.items())]
+
+if training_expanding_window:
+
+    cv = [([i for g in sorted_groups[:y] for i in g],sorted_groups[y]) 
+            for y in range(min_periods_in_train , len(sorted_groups))]
+
+else:
+    
+    cv = [([i for g in sorted_groups[y-min_periods_in_train:y] for i in g],sorted_groups[y]) 
+            for y in range(min_periods_in_train, len(sorted_groups))]
+```
+
+In plotting the candidate models from our grid search, it became clear that our best corn model ended up having a *mean_test_score* (R^2) value of **-0.17827** with a *std_test_score* of **0.360155**. Results were similar for both soybeans and wheat.
+
+While these scores may appear quite underwhelming, we believe that they are optimal for the type of model that we're building and given that data at our disposal. As previously mentioned, the machine learning model that produced these results was a Bayesian Ridge model. This is another type of a linear model supported by sklearn, that essentially combines the approaches to regularization that Ridge and Lasso models undertake, which is why the model features two alpha and two lambda parameters. The ultimate purpose of those parameters is to limit the likelihood that the beta coefficients associated with our x-variables significantly varied from zero. 
+
+<img src="pics/corn_candidates.png" alt="corn_candidates"/><img src="pics/soybeans_candidates.png" alt="soybeans_candidates"/><img src="pics/wheat_candidates.png" alt="wheat_candidates"/>
+
+**Step 6: Test Model on Holdout Set**
+
+With an optimal model yielding a negative R^2, we did not expect a good turnout on our holdout set. The following were the respective R^2 values once tested on our holdout set.
+
+**1. Corn: 0.00622**
+
+**2. Soybeans: -0.00307**
+
+**3. Wheat: 0.00136**
+
+With such low R^2 values for all of our commodities, despite trying hundreds of models, we learned that is incredibly difficult to predict future returns simply based on historical information. If anything, this has solidified our expectation of the Efficient Market Hypothesis, which states as such!
 
 ## Conclusion <a name="summary"></a>
+Our research determined that the Efficient Market Hypothesis holds for commodity returns. While we were able to explain some of the variation in commodity returns using various financial, macroeconomic, and climate variables (up to 6.7%) in the same time period, we found that these variables do not hold any significant predictive ability when trying to use them to predict future commodity returns. As a result, we are left to conclude that the random walk theory holds for commodity-based assets.
 
-Blah blah 
 
-
-```python
-import seaborn as sns 
-iris = sns.load_dataset('iris') 
-
-print(iris.head(),  '\n---')
-print(iris.tail(),  '\n---')
-print(iris.columns, '\n---')
-print("The shape is: ",iris.shape, '\n---')
-print("Info:",iris.info(), '\n---') # memory usage, name, dtype, and # of non-null obs (--> # of missing obs) per variable
-print(iris.describe(), '\n---') # summary stats, and you can customize the list!
-print(iris['species'].value_counts()[:10], '\n---')
-print(iris['species'].nunique(), '\n---')
-```
 ## About the Team <a name="team"></a>
 
 <img src="pics/mike.jpg" alt="Michael Rich" width="300"/>
@@ -327,7 +400,7 @@ Luke Costello is pursuing a degree in Finance at Lehigh University. He can be re
 Harry Herman is a Finance major at Lehigh University. He can be reached at hsh423@lehigh.edu.
 <br>
 <br>
-
-To view the final analysis report associated with this project, click [here](https://github.com/lukecost/CommodityPrices/blob/main/part3_analysis.ipynb) 
+<br>
+To view the final analysis report associated with this project, click [here](https://github.com/lukecost/CommodityPrices/blob/main/part3_analysis.ipynb).
 <br>
 To view the GitHub repo for this website, click [here](https://github.com/lukecost/CommodityPrices).
