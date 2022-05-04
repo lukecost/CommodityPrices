@@ -94,7 +94,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 <img src="pics/stat1.jpg"/
 <br>
      - Interpretation: 
-         - β1 : A single % increase in the market risk premium is associated with a 0.355% increase in corn future returns, on average
+         - β1 : A single % increase in the market risk premium is associated with a 0.355% increase in corn future returns, on average.
 
 
 
@@ -104,11 +104,11 @@ With all variables loaded in, the StatsModels library and API are used for regre
 <img src="pics/stat2.jpg"/>
 <br>
     - Interpretation: 
-         - β1 : A single % increase in the market risk premium is associated with a 1.078% decrease in corn future returns, on average (ceteris paribus)
-         - β2: A single % increase in US GDP is associated with with a 0.018% increase in corn future returns, on average (ceteris paribus)
-         - β3: A single % increase in US CPI (inflation) is associated with a 0.394% decrease in corn future returns, on average (ceteris paribus)
-         - β4: A single % increase in US unemployment rates is associated with a 0.000082% increase in corn future returns, on average (ceteris paribus)
-         - β5: A single % increase in SP500 returns is associated with a 0.365% increase in corn future returns, on average (ceteris paribus)
+         - β1 : A single % increase in the market risk premium is associated with a 1.078% decrease in corn future returns, on average (ceteris paribus).
+         - β2: A single % increase in US GDP is associated with with a 0.018% increase in corn future returns, on average (ceteris paribus).
+         - β3: A single % increase in US CPI (inflation) is associated with a 0.394% decrease in corn future returns, on average (ceteris paribus).
+         - β4: A single % increase in US unemployment rates is associated with a 0.000082% increase in corn future returns, on average (ceteris paribus).
+         - β5: A single % increase in SP500 returns is associated with a 0.365% increase in corn future returns, on average (ceteris paribus).
 
 
 
@@ -118,15 +118,15 @@ With all variables loaded in, the StatsModels library and API are used for regre
 <img src="pics/stat3.jpg"/>
 <br>
     - Interpretation: 
-         - β1 : A single % increase in the market risk premium is associated with a -0.2383 decrease in corn future returns, on average (ceteris paribus)
-         - β2: A single % increase in US GDP is associated with with a 0.1622% increase in corn future returns, on average (ceteris paribus)
-         - β3: A single % increase in US CPI (inflation) is associated with a -0.7320% decrease in corn future returns, on average (ceteris paribus)
-         - β4: A single % increase in US unemployment rates is associated with a 0.0014% increase in corn future returns, on average (ceteris paribus)
-         - β5: A single % increase in SP500 returns is associated with a 0.3448% increase in corn future returns, on average (ceteris paribus)
-         - β6: A single unit increase in precipitation is associated with a 0.000063% increase in corn future returns, on average (ceteris paribus)
-         - β7: A single unit increase in snowfall is associated with a -0.0003 increase in corn future returns, on average (ceteris paribus)
-         - β8: A single unit increase in max temperatures is associated with a 0.000075% increase in corn future returns, on average (ceteris paribus)
-         - β9: A single unit increase in min temperatures is associated with a 0.000002% increase in corn future returns, on average (ceteris paribus)
+         - β1 : A single % increase in the market risk premium is associated with a -0.2383 decrease in corn future returns, on average (ceteris paribus).
+         - β2: A single % increase in US GDP is associated with with a 0.1622% increase in corn future returns, on average (ceteris paribus).
+         - β3: A single % increase in US CPI (inflation) is associated with a -0.7320% decrease in corn future returns, on average (ceteris paribus).
+         - β4: A single % increase in US unemployment rates is associated with a 0.0014% increase in corn future returns, on average (ceteris paribus).
+         - β5: A single % increase in SP500 returns is associated with a 0.3448% increase in corn future returns, on average (ceteris paribus).
+         - β6: A single unit increase in precipitation is associated with a 0.000063% increase in corn future returns, on average (ceteris paribus).
+         - β7: A single unit increase in snowfall is associated with a -0.0003 increase in corn future returns, on average (ceteris paribus).
+         - β8: A single unit increase in max temperatures is associated with a 0.000075% increase in corn future returns, on average (ceteris paribus).
+         - β9: A single unit increase in min temperatures is associated with a 0.000002% increase in corn future returns, on average (ceteris paribus).
      
          
 *Soybeans Regressions* 
@@ -137,7 +137,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 <img src="pics/stat4.jpg"/>
 <br>
      - Interpretation: 
-         - β1 : A single % increase in the market risk premium is associated with a 1.556% decrease in soybeans future returns, on average
+         - β1 : A single % increase in the market risk premium is associated with a 1.556% decrease in soybeans future returns, on average.
 
 
 
@@ -147,11 +147,11 @@ With all variables loaded in, the StatsModels library and API are used for regre
 <img src="pics/stat5.jpg"/>
 <br>
     - Interpretation: 
-         - β1 : A single % increase in the market risk premium is associated with a 2.907% decrease in soybeans future returns, on average (ceteris paribus)
-         - β2: A single % increase in US GDP is associated with with a 0.580% decrease in soybeans future returns, on average (ceteris paribus)
-         - β3: A single % increase in US CPI (inflation) is associated with a 1.207% decrease in soybeans future returns, on average (ceteris paribus)
-         - β4: A single % increase in US unemployment rates is associated with a 0.000009% increase in soybeans future returns, on average (ceteris paribus)
-         - β5: A single % increase in SP500 returns is associated with a 0.371% increase in soybeans future returns, on average (ceteris paribus)
+         - β1 : A single % increase in the market risk premium is associated with a 2.907% decrease in soybeans future returns, on average (ceteris paribus).
+         - β2: A single % increase in US GDP is associated with with a 0.580% decrease in soybeans future returns, on average (ceteris paribus).
+         - β3: A single % increase in US CPI (inflation) is associated with a 1.207% decrease in soybeans future returns, on average (ceteris paribus).
+         - β4: A single % increase in US unemployment rates is associated with a 0.000009% increase in soybeans future returns, on average (ceteris paribus).
+         - β5: A single % increase in SP500 returns is associated with a 0.371% increase in soybeans future returns, on average (ceteris paribus).
 
 
 
@@ -161,15 +161,15 @@ With all variables loaded in, the StatsModels library and API are used for regre
 <img src="pics/stat6.jpg"/>
 <br>
     - Interpretation: 
-         - β1 : A single % increase in the market risk premium is associated with a 2.979 decrease in soybeans future returns, on average (ceteris paribus)
-         - β2: A single % increase in US GDP is associated with with a 0.6377% decrease in soybeans future returns, on average (ceteris paribus)
-         - β3: A single % increase in US CPI (inflation) is associated with a  0.7117% increase in soybeans future returns, on average (ceteris paribus)
-         - β4: A single % increase in US unemployment rates is associated with a 0.0005% increase in soybeans future returns, on average (ceteris paribus)
-         - β5: A single % increase in SP500 returns is associated with a 0.3819% increase in soybeans future returns, on average (ceteris paribus)
-         - β6: A single unit increase in precipitation is associated with a 0.0000038% increase in soybeans future returns, on average (ceteris paribus)
-         - β7: A single unit increase in snowfall is associated with a 0.0000038 decrease in soybeans future returns, on average (ceteris paribus)
-         - β8: A single unit increase in max temperatures is associated with a 0.000028% increase in soybeans future returns, on average (ceteris paribus)
-         - β9: A single unit increase in min temperatures is associated with a 0.000023% increase in soybeans future returns, on average (ceteris paribus)
+         - β1 : A single % increase in the market risk premium is associated with a 2.979 decrease in soybeans future returns, on average (ceteris paribus).
+         - β2: A single % increase in US GDP is associated with with a 0.6377% decrease in soybeans future returns, on average (ceteris paribus).
+         - β3: A single % increase in US CPI (inflation) is associated with a  0.7117% increase in soybeans future returns, on average (ceteris paribus).
+         - β4: A single % increase in US unemployment rates is associated with a 0.0005% increase in soybeans future returns, on average (ceteris paribus).
+         - β5: A single % increase in SP500 returns is associated with a 0.3819% increase in soybeans future returns, on average (ceteris paribus).
+         - β6: A single unit increase in precipitation is associated with a 0.0000038% increase in soybeans future returns, on average (ceteris paribus).
+         - β7: A single unit increase in snowfall is associated with a 0.0000038 decrease in soybeans future returns, on average (ceteris paribus).
+         - β8: A single unit increase in max temperatures is associated with a 0.000028% increase in soybeans future returns, on average (ceteris paribus).
+         - β9: A single unit increase in min temperatures is associated with a 0.000023% increase in soybeans future returns, on average (ceteris paribus).
  
  
 *Wheat Regressions* 
@@ -180,7 +180,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 <img src="pics/stat7.jpg"/>
 <br>
      - Interpretation: 
-         - β1 : A single % increase in the market risk premium is associated with a 0.713% decrease in wheat future returns, on average
+         - β1 : A single % increase in the market risk premium is associated with a 0.713% decrease in wheat future returns, on average.
 
 
 
@@ -190,11 +190,11 @@ With all variables loaded in, the StatsModels library and API are used for regre
 <img src="pics/stat8.jpg"/>
 <br>
     - Interpretation: 
-         - β1 : A single % increase in the market risk premium is associated with a 3.211% decrease in wheat future returns, on average (ceteris paribus)
-         - β2: A single % increase in US GDP is associated with with a 0.344% increase in wheat future returns, on average (ceteris paribus)
-         - β3: A single % increase in US CPI (inflation) is associated with a 0.203% increase in wheat future returns, on average (ceteris paribus)
-         - β4: A single % increase in US unemployment rates is associated with a 0.0015% decrease in wheat future returns, on average (ceteris paribus)
-         - β5: A single % increase in SP500 returns is associated with a 0.358% increase in wheat future returns, on average (ceteris paribus)
+         - β1 : A single % increase in the market risk premium is associated with a 3.211% decrease in wheat future returns, on average (ceteris paribus).
+         - β2: A single % increase in US GDP is associated with with a 0.344% increase in wheat future returns, on average (ceteris paribus).
+         - β3: A single % increase in US CPI (inflation) is associated with a 0.203% increase in wheat future returns, on average (ceteris paribus).
+         - β4: A single % increase in US unemployment rates is associated with a 0.0015% decrease in wheat future returns, on average (ceteris paribus).
+         - β5: A single % increase in SP500 returns is associated with a 0.358% increase in wheat future returns, on average (ceteris paribus).
 
 
 
@@ -204,21 +204,21 @@ With all variables loaded in, the StatsModels library and API are used for regre
 <img src="pics/stat9.jpg"/>
 <br>
     - Interpretation: 
-         - β1 : A single % increase in the market risk premium is associated with a 1.8263 decrease in wheat future returns, on average (ceteris paribus)
-         - β2: A single % increase in US GDP is associated with with a 0.993% increase in wheat future returns, on average (ceteris paribus)
-         - β3: A single % increase in US CPI (inflation) is associated with a  1.0529% decrease in wheat future returns, on average (ceteris paribus)
-         - β4: A single % increase in US unemployment rates is associated with a 0.0007% decrease in wheat future returns, on average (ceteris paribus)
-         - β5: A single % increase in SP500 returns is associated with a 0.3789% increase in wheat future returns, on average (ceteris paribus)
-         - β6: A single unit increase in precipitation is associated with a 0.0000024% decrease in wheat future returns, on average (ceteris paribus)
-         - β7: A single unit increase in snowfall is associated with a 0.0002 decrease in wheat future returns, on average (ceteris paribus)
-         - β8: A single unit increase in max temperatures is associated with a 0.0000037% increase in wheat future returns, on average (ceteris paribus)
-         - β9: A single unit increase in min temperatures is associated with a 0.0002% increase in wheat future returns, on average (ceteris paribus)
+         - β1 : A single % increase in the market risk premium is associated with a 1.8263 decrease in wheat future returns, on average (ceteris paribus).
+         - β2: A single % increase in US GDP is associated with with a 0.993% increase in wheat future returns, on average (ceteris paribus).
+         - β3: A single % increase in US CPI (inflation) is associated with a  1.0529% decrease in wheat future returns, on average (ceteris paribus).
+         - β4: A single % increase in US unemployment rates is associated with a 0.0007% decrease in wheat future returns, on average (ceteris paribus).
+         - β5: A single % increase in SP500 returns is associated with a 0.3789% increase in wheat future returns, on average (ceteris paribus).
+         - β6: A single unit increase in precipitation is associated with a 0.0000024% decrease in wheat future returns, on average (ceteris paribus).
+         - β7: A single unit increase in snowfall is associated with a 0.0002 decrease in wheat future returns, on average (ceteris paribus).
+         - β8: A single unit increase in max temperatures is associated with a 0.0000037% increase in wheat future returns, on average (ceteris paribus).
+         - β9: A single unit increase in min temperatures is associated with a 0.0002% increase in wheat future returns, on average (ceteris paribus).
 
 **Analysis of regressions**
 - Regressions got better as more independent variables as added. Model 3 had the highest R2 among all commodities.
 - Macroeconomic and climate variables DO help predict variations in futures returns.
 - Climate coefficients are generally very close to zero, indicating that they are very weakly correlated to returns.
-- The signs of these coefficients do make sense, however, as one would expect more precipitation to have a positive impact on crop returns, while the opposite would be the expectation for snowfall. 
+- The signs of the coefficients do make sense, as one would expect more precipitation to have a positive impact on crop returns, while the opposite would be the expectation for snowfall. 
 - The coefficient of the market risk premium went from being positive to strongly negative (for corn and soybeans) as other variables were added. This coefficient is essentially an estimate of the financial beta of these futures, so a negative beta is the logical expectation, given that equity and commodity market tend to move in opposite directions.
 - Most of coefficients observed for all models have a low likelihood to be truly statistically significant, as only a handful of them have a t-score above the threshold value of 1.96. 
 
@@ -242,15 +242,15 @@ With all variables loaded in, the StatsModels library and API are used for regre
 ## Predictive Modeling <a name="modeling"></a>
 The file containing our predictive machine learning models can be found [here](https://github.com/lukecost/CommodityPrices/blob/main/part2_modeling.ipynb).
 
-**Step 1: Load Commodity DF, Create Holdout Set**
+**Step 1: Load Commodity DF, Create Holdout Set** <br>
 We separated the data to create training and holdout sets. The training set would be used to train the model, whereas the holdout set would be used to test the accuracy of our trained model. Data from years 1990 - 2014 (80%) was used as the training data to create a model for our testing data consisting of years 2015-2019 (20%). 
 
 X variables (independent) are separated from the y variable (dependent) for the model. In this case, commodity returns are the dependent variable.
 
-**Step 2: EDA on Training Set**
+**Step 2: EDA on Training Set** <br>
 EDA was performed on all data, specifically using Pandas Profiling. Few instances of NaN values were found. The data was generally clean.  This process was instrimental in understanding the data for accurate modeling.
 
-**Step 3: Preprocess Data**
+**Step 3: Preprocess Data** <br>
 To preprocess the data, we created a pipe that would impute numerical NaN variables with their mean, and then used StandardScaler() to scale all of our variables. Within our *preproc_pipe*, we used the following 8 independent variables within our corn model:
 
 - **'ret_gdp':** monthly return of domestic GDP
@@ -264,7 +264,7 @@ To preprocess the data, we created a pipe that would impute numerical NaN variab
 
 Preprocessing was repeated for wheat and soybeans.
 
-**Step 4: Create Pipeline**
+**Step 4: Create Pipeline** <br>
 We tried a variety of models to best fit our training set. Models we tried include:
 
 - **Ridge()**
@@ -285,7 +285,7 @@ gbr_pipe = Pipeline([
                 ])
 ```
 
-**Step 5: Optimizing Hyperparameters | Grid Search**
+**Step 5: Optimizing Hyperparameters and Grid Search** <br>
 
 We found that the parameters that highly influence the BayesianRidge() Model were the following:
 
@@ -318,6 +318,7 @@ In plotting the candidate models from our grid search, it became clear that our 
 
 While these scores may appear quite underwhelming, we believe that they are optimal for the type of model that we're building and given that data at our disposal. As previously mentioned, the machine learning model that produced these results was a Bayesian Ridge model. This is another type of a linear model supported by sklearn, that essentially combines the approaches to regularization that Ridge and Lasso models undertake, which is why the model features two alpha and two lambda parameters. The ultimate purpose of those parameters is to limit the likelihood that the beta coefficients associated with our x-variables significantly varied from zero. 
 <br>
+<br>
 Corn
 <br>
 <img src="pics/corn_models.jpg" alt="corn_candidates"/>
@@ -331,7 +332,7 @@ Wheat
 <img src="pics/wheat_models.jpg" alt="wheat_candidates"/>
 <br>
 
-**Step 6: Test Model on Holdout Set**
+**Step 6: Test Model on Holdout Set** <br>
 
 With an optimal model yielding a negative R^2, we did not expect a good turnout on our holdout set. The following were the respective R^2 values once tested on our holdout set.
 
