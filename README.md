@@ -92,7 +92,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 - **Model 1**: ``` corn1 = sm_ols('realized_ret_corn ~ (market_risk_prem)',data=Commodities_DF).fit() ```
      - Key Statistics: 
 <br>
-<img src="pics/stat1.jpg"/
+<img src="pics/stat1.jpg"/>
 <br>
      - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a 0.355% increase in corn future returns, on average.
