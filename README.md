@@ -1,14 +1,3 @@
-# Commodity Prices
-
-This is a website to showcase our final project for FIN 377 - Data Science for Finance course at Lehigh University.
-
-To see the complete analysis file(s) click [here](https://github.com/julioveracruz/testwebsite/blob/main/notebooks/example.ipynb).
-
-Maybe you want a different website them for the project? Consider `minimal-mistakes`:
-1. [Go here](https://github.com/mmistakes/mm-github-pages-starter/generate).
-2. In the resulting repo, click Settings, then Pages, then make sure the source is the main branch.
-3. [The doc site is here](https://mmistakes.github.io/minimal-mistakes/docs/structure/) and will help you customize layouts and figure out how to use it.
-
 ## Table of contents
 1. [Introduction](#introduction)
 2. [Research Question](#meth)
@@ -16,6 +5,8 @@ Maybe you want a different website them for the project? Consider `minimal-mista
 4. [Project Considerations](#other)
 5. [Data Cleaning](#cleaning)
 6. [Predictive Modeling](#modeling)
+7. [Conclusion](#summary)
+8. [About the Team](#team)
 
 ## Introduction  <a name="introduction"></a>
 
@@ -299,7 +290,7 @@ We separated the data to create training and holdout sets. The training set woul
 X variables (independent) are separated from the y variable (dependent) for the model. In this case, commodity returns are the dependent variable.
 
 
-## Summary <a name="summary"></a>
+## Conclusion <a name="summary"></a>
 
 Blah blah 
 
@@ -317,7 +308,7 @@ print(iris.describe(), '\n---') # summary stats, and you can customize the list!
 print(iris['species'].value_counts()[:10], '\n---')
 print(iris['species'].nunique(), '\n---')
 ```
-## About the team
+## About the Team <a name="team"></a>
 
 <img src="pics/mike.jpg" alt="Michael Rich" width="300"/>
 <br>
@@ -336,6 +327,5 @@ Luke Costello is pursuing a degree in Finance at Lehigh University. He can be re
 Harry Herman is a Finance major at Lehigh University. He can be reached at hsh423@lehigh.edu.
 
 
-## More 
-
-To view the GitHub repo for this website, click [here](https://github.com/donbowen/teamproject).
+To view the final analysis report associated with this project, click [here](https://github.com/lukecost/CommodityPrices/blob/main/part3_analysis.ipynb)
+To view the GitHub repo for this website, click [here](https://github.com/lukecost/CommodityPrices).
