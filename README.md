@@ -223,7 +223,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 - The coefficient of the market risk premium went from being positive to strongly negative (for corn and soybeans) as other variables were added. This coefficient is essentially an estimate of the financial beta of these futures, so a negative beta is the logical expectation, given that equity and commodity market tend to move in opposite directions.
 - Most of coefficients observed for all models have a low likelihood to be truly statistically significant, as only a handful of them have a t-score above the threshold value of 1.96. 
 
-#### Visualizing Regression Relationships**
+#### Visualizing Regression Relationships
  - Visualization 1: Monthly Corn Futures Returns vs Select Independent Variables
 <img src="pics/Corn_Correlations_Reg.png" alt="Corn Correlation"/>
 
