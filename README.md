@@ -22,17 +22,14 @@ The main goal of this project is to explore whether it is possible to predict th
 
 ## Research Question <a name="meth"></a>
 
-#### Can climate and macroeconomic indicators be used to predict the domestic prices of Corn, Wheat, and Soybeans?
-### Sub Questions (specific research questions): 
-- Are macroeconomic data correlated with climate data? 
-- Which commodities are most easily predicted? 
-- Are there arbitrage opportunities within the futures market? 
+#### Can climate and macroeconomic indicators be used to predict the future domestic returns of Corn, Wheat, and Soybeans? Can we use historical data to create a model that "beats the market" by finding arbitrage opportunity, or does the Efficient Market Hypothesis hold?
 
 ## Data <a name="section2"></a>
 ### Commodities
-- Corn
-- Wheat
-- Soybeans
+- [Corn](https://www.investing.com/commodities/us-corn-historical-data)
+- [Wheat](https://www.investing.com/commodities/us-wheat-historical-data)
+- [Soybeans](https://www.investing.com/commodities/us-soybeans-historical-data)
+
 
 ### Climate Data
 - Domestic data only
@@ -44,16 +41,13 @@ The main goal of this project is to explore whether it is possible to predict th
 - Data collected from https://www.ncdc.noaa.gov/
 
 ### Macroeconomic Data
-- Unemployment
-- Inflation (CPI)
-- Interest Rates 
-- GDP
-- Consumer Sentiment (CCI)
-- S&P500 Index Returns, converted to monthly observations
-- Data collected from FRED, and investing.com. 
+- [Unemployment](https://fred.stlouisfed.org/series/UNRATE)
+- [Inflation (CPI)](https://fred.stlouisfed.org/series/CPIAUCSL)
+- [Interest Rates](https://fred.stlouisfed.org/searchresults?st=interest)
+- [GDP](https://fred.stlouisfed.org/series/GDP)
+- [S&P500 Index Returns](https://www.investing.com/indices/us-spx-500-historical-data)
 
-All data was relatively clean with few errors.
-
+Data was cleaned in the file
 ## Project Considerations <a name="other"></a>
 - **Observation:** Time-Commodity 
 - **Sample period:** 1990-2019
