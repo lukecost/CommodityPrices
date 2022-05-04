@@ -57,9 +57,9 @@ macro_df = pdr.data.DataReader(['GDP','CPIAUCSL','UNRATE'], 'fred', start, end)
 Data was cleaned in this [file](https://github.com/lukecost/CommodityPrices/blob/main/data_cleaning.ipynb).
 
 #### Points of Interest
-- GDP is computed quarterly, so the 'nearest' method is used to fill in missing DSP data.
+- GDP is computed quarterly, so the 'nearest' method is used to fill in missing GDP data.
 - Commodity price and climate data are merged with macroeconomic data to create one DataFrame.
-- Commodity prices translated float types, then used to calculate returns. **A sample of this is below.**
+- Commodity prices are translated to float types, then used to calculate returns. **A sample of this is below.**
 
 
 Unnecessary columns are removed, common timeframes are implimented, and a final DataFrame is created by merging all cleaned data. Cleaned data is exported to a CSV file for reusability.
@@ -78,22 +78,21 @@ The goal of using regression on our data is to gain an initial understanding of 
 These regressions examine the relationship between commodity returns the data described above.
 
 #### Market Risk Premium Varibale
-- Computed the monthly returns for the sp500
+- Computed the monthly returns for the sp500.
 - Used the .rolling() function to compute a rolling, 60 month period average of the s&p 500 returns.
-- Calculated estimates for the market risk premium for each observation in our dataset by subtracting a monthly risk free - rate (0.407%) from our s&p 500 returns
-- Used a weighted average to ensure positive market risk premiums
+- Calculated estimates for the market risk premium for each observation in our dataset by subtracting a monthly risk free - rate (0.407%) from our s&p 500 returns.
+- Used a weighted average to ensure positive market risk premiums.
 - This variable is crucial for the regressions.
 
-With all variables loaded in, the StatsModels library and API are used for regressions. **Code and analysis for regressions is below**. 
+With all variables loaded in, the StatsModels library and API are used for regressions. **Code and analysis for regressions are below**. 
 
 *Corn Regressions* 
  
 - **Model 1**: ``` corn1 = sm_ols('realized_ret_corn ~ (market_risk_prem)',data=Commodities_DF).fit() ```
      - Key Statistics: 
-     | Statistic      | Value |
-| ----------- | ----------- |
-| R^2      | 0.000       |
-| β1 (market_risk_prem)  | 0.355        |
+<br>
+<img src="pics/stat1.JPG"/>
+<br>
      - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a 0.355% increase in corn future returns, on average
 
@@ -101,14 +100,9 @@ With all variables loaded in, the StatsModels library and API are used for regre
 
 - **Model 2**: ``` corn2 = sm_ols('realized_ret_corn ~ market_risk_prem + ret_gdp + ret_cpi + UNRATE + sp500_rets', data=Commodities_DF).fit() ```
     - Key Statistics: 
-     | Statistic      | Value |
-| ----------- | ----------- |
-| R^2      | 0.035       |
-| β1 (market_risk_prem)  | -1.078        |
-| β2 (ret_gdp)  | 0.0187        |
-| β3 (ret_cpi)  | -0.394       |
-| β4 (UNRATE)  | 0.000082        |
-| β5 (sp500_rets)  | 0.365        |
+<br>
+<img src="pics/stat2.JPG"/>
+<br>
     - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a 1.078% decrease in corn future returns, on average (ceteris paribus)
          - β2: A single % increase in US GDP is associated with with a 0.018% increase in corn future returns, on average (ceteris paribus)
@@ -120,18 +114,9 @@ With all variables loaded in, the StatsModels library and API are used for regre
 
 - **Model 3**: ```sm_ols('realized_ret_corn ~ market_risk_prem + ret_gdp + ret_cpi + UNRATE + sp500_rets + C_PRCP + C_SNOW + C_TMAX + C_TMIN', data=Commodities_DF).fit()```
   - Key Statistics: 
-     | Statistic      | Value |
-| ----------- | ----------- |
-| R^2      | 0.061       |
-| β1 (market_risk_prem)  | -0.2383        |
-| β2 (ret_gdp)  | 0.1622        |
-| β3 (ret_cpi)  | -0.7320       |
-| β4 (UNRATE)  | 0.0014        |
-| β5 (sp500_rets)  | 0.3448	        |
-| β6 (C_PRCP)  | 0.000063    |
-| β7 (C_SNOW)  | -0.0003       |
-| β8 (C_TMAX)  | 0.000075	        |
-| β9 (C_TMIN)  | 0.000002        |
+<br>
+<img src="pics/stat3.JPG"/>
+<br>
     - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a -0.2383 decrease in corn future returns, on average (ceteris paribus)
          - β2: A single % increase in US GDP is associated with with a 0.1622% increase in corn future returns, on average (ceteris paribus)
@@ -148,10 +133,9 @@ With all variables loaded in, the StatsModels library and API are used for regre
  
 - **Model 1**: ``` sm_ols('realized_ret_soybeans ~ (market_risk_prem)',data=Commodities_DF).fit() ```
      - Key Statistics: 
-     | Statistic      | Value |
-| ----------- | ----------- |
-| R^2      | 0.001       |
-| β1 (market_risk_prem)  | -1.556        |
+<br>
+<img src="pics/stat4.JPG"/>
+<br>
      - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a 1.556% decrease in soybeans future returns, on average
 
@@ -159,14 +143,9 @@ With all variables loaded in, the StatsModels library and API are used for regre
 
 - **Model 2**: ``` sm_ols('realized_ret_soybeans ~ market_risk_prem + ret_gdp + ret_cpi + UNRATE + sp500_rets', data=Commodities_DF).fit() ```
     - Key Statistics: 
-     | Statistic      | Value |
-| ----------- | ----------- |
-| R^2      | 0.049       |
-| β1 (market_risk_prem)  | -2.9067        |
-| β2 (ret_gdp)  | -0.5800        |
-| β3 (ret_cpi)  | 1.2068       |
-| β4 (UNRATE)  | 0.0000086        |
-| β5 (sp500_rets)  | 0.371        |
+<br>
+<img src="pics/stat5.JPG"/>
+<br>
     - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a 2.907% decrease in soybeans future returns, on average (ceteris paribus)
          - β2: A single % increase in US GDP is associated with with a 0.580% decrease in soybeans future returns, on average (ceteris paribus)
@@ -178,18 +157,9 @@ With all variables loaded in, the StatsModels library and API are used for regre
 
 - **Model 3**: ```sm_ols('realized_ret_corn ~ market_risk_prem + ret_gdp + ret_cpi + UNRATE + sp500_rets + C_PRCP + C_SNOW + C_TMAX + C_TMIN', data=Commodities_DF).fit()```
   - Key Statistics: 
-     | Statistic      | Value |
-| ----------- | ----------- |
-| R^2      | 0.060       |
-| β1 (market_risk_prem)  | -2.9791        |
-| β2 (ret_gdp)  | -0.6377        |
-| β3 (ret_cpi)  | 0.7117      |
-| β4 (UNRATE)  | 0.0005        |
-| β5 (sp500_rets)  | 0.3819	        |
-| β6 (S_PRCP)  | 0.0000038    |
-| β7 (S_SNOW)  | -0.0000038       |
-| β8 (S_TMAX)  | 0.000028	        |
-| β9 (S_TMIN)  | 0.000023        |
+<br>
+<img src="pics/stat6.JPG"/>
+<br>
     - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a 2.979 decrease in soybeans future returns, on average (ceteris paribus)
          - β2: A single % increase in US GDP is associated with with a 0.6377% decrease in soybeans future returns, on average (ceteris paribus)
@@ -206,10 +176,9 @@ With all variables loaded in, the StatsModels library and API are used for regre
  
 - **Model 1**: ``` sm_ols('realized_ret_wheat ~ (market_risk_prem)',data=Commodities_DF).fit() ```
      - Key Statistics: 
-     | Statistic      | Value |
-| ----------- | ----------- |
-| R^2      | 0.000       |
-| β1 (market_risk_prem)  | -0.7131        |
+<br>
+<img src="pics/stat7.JPG"/>
+<br>
      - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a 0.713% decrease in wheat future returns, on average
 
@@ -217,14 +186,9 @@ With all variables loaded in, the StatsModels library and API are used for regre
 
 - **Model 2**: ``` sm_ols('realized_ret_wheat ~ market_risk_prem + ret_gdp + ret_cpi + UNRATE + sp500_rets', data=Commodities_DF).fit() ```
     - Key Statistics: 
-     | Statistic      | Value |
-| ----------- | ----------- |
-| R^2      | 0.031       |
-| β1 (market_risk_prem)  | -3.2112        |
-| β2 (ret_gdp)  | 0.3436        |
-| β3 (ret_cpi)  | 0.2033       |
-| β4 (UNRATE)  | -0.0015        |
-| β5 (sp500_rets)  | 0.3585       |
+<br>
+<img src="pics/stat8.JPG"/>
+<br>
     - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a 3.211% decrease in wheat future returns, on average (ceteris paribus)
          - β2: A single % increase in US GDP is associated with with a 0.344% increase in wheat future returns, on average (ceteris paribus)
@@ -236,18 +200,9 @@ With all variables loaded in, the StatsModels library and API are used for regre
 
 - **Model 3**: ```sm_ols('realized_ret_wheat ~ market_risk_prem + ret_gdp + ret_cpi + UNRATE + sp500_rets + W_PRCP + W_SNOW + W_TMAX + W_TMIN' ,data=Commodities_DF).fit()```
   - Key Statistics: 
-     | Statistic      | Value |
-| ----------- | ----------- |
-| R^2      | 0.067       |
-| β1 (market_risk_prem)  | -1.8263        |
-| β2 (ret_gdp)  | 0.9930       |
-| β3 (ret_cpi)  | -1.0529      |
-| β4 (UNRATE)  | -0.0007       |
-| β5 (sp500_rets)  | 0.3789        |
-| β6 (S_PRCP)  | -0.0000024    |
-| β7 (S_SNOW)  | -0.0002       |
-| β8 (S_TMAX)  | 0.0000037	        |
-| β9 (S_TMIN)  | 0.0002        |
+<br>
+<img src="pics/stat9.JPG"/>
+<br>
     - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a 1.8263 decrease in wheat future returns, on average (ceteris paribus)
          - β2: A single % increase in US GDP is associated with with a 0.993% increase in wheat future returns, on average (ceteris paribus)
@@ -362,8 +317,19 @@ else:
 In plotting the candidate models from our grid search, it became clear that our best corn model ended up having a *mean_test_score* (R^2) value of **-0.17827** with a *std_test_score* of **0.360155**. Results were similar for both soybeans and wheat.
 
 While these scores may appear quite underwhelming, we believe that they are optimal for the type of model that we're building and given that data at our disposal. As previously mentioned, the machine learning model that produced these results was a Bayesian Ridge model. This is another type of a linear model supported by sklearn, that essentially combines the approaches to regularization that Ridge and Lasso models undertake, which is why the model features two alpha and two lambda parameters. The ultimate purpose of those parameters is to limit the likelihood that the beta coefficients associated with our x-variables significantly varied from zero. 
-
-<img src="pics/corn_models.jpg" alt="corn_candidates"/><img src="pics/soybean_models.jpg" alt="soybeans_candidates"/><img src="pics/wheat_models.jpg" alt="wheat_candidates"/>
+<br>
+Corn
+<br>
+<img src="pics/corn_models.jpg" alt="corn_candidates"/>
+<br>
+Soybeans
+<br>
+<img src="pics/soybean_models.jpg" alt="soybeans_candidates"/>
+<br>
+Wheat
+<br>
+<img src="pics/wheat_models.jpg" alt="wheat_candidates"/>
+<br>
 
 **Step 6: Test Model on Holdout Set**
 
