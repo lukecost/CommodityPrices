@@ -83,7 +83,8 @@ These regressions examine the relationship between commodity returns the data de
 - Calculated estimates for the market risk premium for each observation in our dataset by subtracting a monthly risk free - rate (0.407%) from our s&p 500 returns.
 - Used a weighted average to ensure positive market risk premiums.
 - This variable is crucial for the regressions.
-
+<br>
+<br>
 With all variables loaded in, the StatsModels library and API are used for regressions. **Code and analysis for regressions are below**. 
 
 *Corn Regressions* 
@@ -214,7 +215,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
          - β8: A single unit increase in max temperatures is associated with a 0.0000037% increase in wheat future returns, on average (ceteris paribus).
          - β9: A single unit increase in min temperatures is associated with a 0.0002% increase in wheat future returns, on average (ceteris paribus).
 
-**Analysis of regressions**
+#### Analysis of regressions
 - Regressions got better as more independent variables as added. Model 3 had the highest R2 among all commodities.
 - Macroeconomic and climate variables DO help predict variations in futures returns.
 - Climate coefficients are generally very close to zero, indicating that they are very weakly correlated to returns.
@@ -222,7 +223,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 - The coefficient of the market risk premium went from being positive to strongly negative (for corn and soybeans) as other variables were added. This coefficient is essentially an estimate of the financial beta of these futures, so a negative beta is the logical expectation, given that equity and commodity market tend to move in opposite directions.
 - Most of coefficients observed for all models have a low likelihood to be truly statistically significant, as only a handful of them have a t-score above the threshold value of 1.96. 
 
-**Visualizing Regression Relationships**
+#### Visualizing Regression Relationships**
  - Visualization 1: Monthly Corn Futures Returns vs Select Independent Variables
 <img src="pics/Corn_Correlations_Reg.png" alt="Corn Correlation"/>
 
