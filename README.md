@@ -15,6 +15,7 @@ Maybe you want a different website them for the project? Consider `minimal-mista
 3. [Data](#section2)
 4. [Project Considerations](#other)
 5. [Data Cleaning](#cleaning)
+6. [Predictive Modeling](#modeling)
 
 ## Introduction  <a name="introduction"></a>
 
@@ -70,21 +71,36 @@ Commodities_Final['realized_ret_corn'] = (np.log(Commodities_Final['Corn_Future_
                                        
 ```
 
-## Analysis Section <a name="section3"></a>
+## Regression
+The file containing regression on our data can be found [here](https://github.com/lukecost/CommodityPrices/blob/main/part1_regressions.ipynb)
 
-Here are some graphs that we created in our analysis. We saved them to the `pics/` subfolder and include them via the usual markdown syntax for pictures.
+The goal of using regression on our data is to gain an initial understanding of the degree of correlation between the various independent variable in our dataset and the explanatory variables (returns of commodity futures). 
 
-![](pics/plot1.png)
-<br><br>
-Some analysis here
-<br><br>
-![](pics/plot2.png)
-<br><br>
-More analysis here.
-<br><br>
-![](pics/plot3.png)
-<br><br>
-More analysis.
+These regressions examine the relationship between commodity returns the data described above.
+
+#### Market Risk Premium Varibale
+- Computed the monthly returns for the sp500
+- Used the .rolling() function to compute a rolling, 60 month period average of the s&p 500 returns.
+- Calculated estimates for the market risk premium for each observation in our dataset by subtracting a monthly risk free - rate (0.407%) from our s&p 500 returns
+- Used a weighted average to ensure positive market risk premiums
+- This variable is crucial for the regressions.
+
+With all variables loaded in, the StatsModels library and API are used for regressions. **Code for corn regressions are below**
+
+``` python
+corn1 = sm_ols('realized_ret_corn ~ (market_risk_prem)',data=Commodities_DF).fit()
+```
+# add key statns and interpretation here
+
+Below is a heatmap that describes the relationship between all of our variables in the corn dataset.
+<img src="pics/corn_heat.jpg" alt="Corn Heatmap"/>
+
+
+## Predictive Modeling <a name="modeling"></a>
+We separated the data to create training and holdout sets. The training set would be used to train the model, whereas the holdout set would be used to test the accuracy of our trained model. Data from years 1990 - 2014 (80%) was used as the training data to create a model for our testing data consisting of years 2015-2019 (20%). 
+
+X variables (independent) are separated from the y variable (dependent) for the model. In this case, commodity returns are the dependent variable.
+
 
 ## Summary <a name="summary"></a>
 
