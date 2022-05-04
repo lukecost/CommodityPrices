@@ -14,7 +14,7 @@ Maybe you want a different website them for the project? Consider `minimal-mista
 2. [Research Question](#meth)
 3. [Data](#section2)
 4. [Project Considerations](#other)
-5. [Summary](#summary)
+5. [Data Cleaning](#cleaning)
 
 ## Introduction  <a name="introduction"></a>
 
@@ -47,14 +47,28 @@ The main goal of this project is to explore whether it is possible to predict th
 - [GDP](https://fred.stlouisfed.org/series/GDP)
 - [S&P500 Index Returns](https://www.investing.com/indices/us-spx-500-historical-data)
 
-Data was cleaned in the file
+
 ## Project Considerations <a name="other"></a>
 - **Observation:** Time-Commodity 
 - **Sample period:** 1990-2019
-- **Financial Theory:** Empirical research has found that found positive historical returns together with low or even slightly negative equity-commodity correlations and positive inflation-commodity correlations. This model may help exploit this arbritrage opportunity.
+- **Financial Theory:** Empirical research has found that found positive historical returns together with low or even slightly negative equity-commodity correlations and positive inflation-commodity correlations. This model may help exploit this arbritrage opportunity. However, the Efficient Market Hypothesis holds that asset prices reflect all available information - eliminating arbitrage opportunities. The predictive data the is being gathered is widely available and commodities are traded continuously at large volumes.
 
-### Subsection 2 <a name="subsec2-2"></a>
-This is a subsection, formatted in heading 3 style
+## Data Cleaning <a name="cleaning"></a>
+Data was cleaned in this [file](https://github.com/lukecost/CommodityPrices/blob/main/data_cleaning.ipynb).
+
+#### Points of Interest
+- GDP is computed quarterly, so the 'nearest' method is used to fill in missing DSP data.
+- Commodity price and climate data are merged with macroeconomic data to create one DataFrame.
+- Commodity prices translated flot types, then used to calculate returns. **A sample of this is below.**
+
+
+Unnecessary columns are removed, common timeframes are implimented, and a final DataFrame is created by merging all cleaned data. Cleaned data is exported to a CSV file for reusability.
+
+``` python
+Commodities_Final['realized_ret_corn'] = (np.log(Commodities_Final['Corn_Future_Price'].shift(-1)) 
+                                       - np.log(Commodities_Final['Corn_Future_Price']))
+                                       
+```
 
 ## Analysis Section <a name="section3"></a>
 
