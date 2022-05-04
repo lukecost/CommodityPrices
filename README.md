@@ -91,7 +91,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 - **Model 1**: ``` corn1 = sm_ols('realized_ret_corn ~ (market_risk_prem)',data=Commodities_DF).fit() ```
      - Key Statistics: 
 <br>
-<img src="pics/stat1.JPG"/>
+<img src="pics/stat1.jpg"/
 <br>
      - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a 0.355% increase in corn future returns, on average
@@ -101,7 +101,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 - **Model 2**: ``` corn2 = sm_ols('realized_ret_corn ~ market_risk_prem + ret_gdp + ret_cpi + UNRATE + sp500_rets', data=Commodities_DF).fit() ```
     - Key Statistics: 
 <br>
-<img src="pics/stat2.JPG"/>
+<img src="pics/stat2.jpg"/>
 <br>
     - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a 1.078% decrease in corn future returns, on average (ceteris paribus)
@@ -115,7 +115,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 - **Model 3**: ```sm_ols('realized_ret_corn ~ market_risk_prem + ret_gdp + ret_cpi + UNRATE + sp500_rets + C_PRCP + C_SNOW + C_TMAX + C_TMIN', data=Commodities_DF).fit()```
   - Key Statistics: 
 <br>
-<img src="pics/stat3.JPG"/>
+<img src="pics/stat3.jpg"/>
 <br>
     - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a -0.2383 decrease in corn future returns, on average (ceteris paribus)
@@ -134,7 +134,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 - **Model 1**: ``` sm_ols('realized_ret_soybeans ~ (market_risk_prem)',data=Commodities_DF).fit() ```
      - Key Statistics: 
 <br>
-<img src="pics/stat4.JPG"/>
+<img src="pics/stat4.jpg"/>
 <br>
      - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a 1.556% decrease in soybeans future returns, on average
@@ -144,7 +144,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 - **Model 2**: ``` sm_ols('realized_ret_soybeans ~ market_risk_prem + ret_gdp + ret_cpi + UNRATE + sp500_rets', data=Commodities_DF).fit() ```
     - Key Statistics: 
 <br>
-<img src="pics/stat5.JPG"/>
+<img src="pics/stat5.jpg"/>
 <br>
     - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a 2.907% decrease in soybeans future returns, on average (ceteris paribus)
@@ -158,7 +158,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 - **Model 3**: ```sm_ols('realized_ret_corn ~ market_risk_prem + ret_gdp + ret_cpi + UNRATE + sp500_rets + C_PRCP + C_SNOW + C_TMAX + C_TMIN', data=Commodities_DF).fit()```
   - Key Statistics: 
 <br>
-<img src="pics/stat6.JPG"/>
+<img src="pics/stat6.jpg"/>
 <br>
     - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a 2.979 decrease in soybeans future returns, on average (ceteris paribus)
@@ -177,7 +177,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 - **Model 1**: ``` sm_ols('realized_ret_wheat ~ (market_risk_prem)',data=Commodities_DF).fit() ```
      - Key Statistics: 
 <br>
-<img src="pics/stat7.JPG"/>
+<img src="pics/stat7.jpg"/>
 <br>
      - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a 0.713% decrease in wheat future returns, on average
@@ -187,7 +187,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 - **Model 2**: ``` sm_ols('realized_ret_wheat ~ market_risk_prem + ret_gdp + ret_cpi + UNRATE + sp500_rets', data=Commodities_DF).fit() ```
     - Key Statistics: 
 <br>
-<img src="pics/stat8.JPG"/>
+<img src="pics/stat8.jpg"/>
 <br>
     - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a 3.211% decrease in wheat future returns, on average (ceteris paribus)
@@ -201,7 +201,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 - **Model 3**: ```sm_ols('realized_ret_wheat ~ market_risk_prem + ret_gdp + ret_cpi + UNRATE + sp500_rets + W_PRCP + W_SNOW + W_TMAX + W_TMIN' ,data=Commodities_DF).fit()```
   - Key Statistics: 
 <br>
-<img src="pics/stat9.JPG"/>
+<img src="pics/stat9.jpg"/>
 <br>
     - Interpretation: 
          - β1 : A single % increase in the market risk premium is associated with a 1.8263 decrease in wheat future returns, on average (ceteris paribus)
