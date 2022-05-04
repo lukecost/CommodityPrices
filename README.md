@@ -30,7 +30,7 @@ The main goal of this project is to explore whether it is possible to predict th
 - Maximum Temperature
 - Minimum Temperature
 - Collected in McLean, IL; Whitman, WA; and Cass, ND
-- Data collected from https://www.ncdc.noaa.gov/
+- Data collected from [NOAA](https://www.ncdc.noaa.gov/)
 
 ### Macroeconomic Data
 - [Unemployment](https://fred.stlouisfed.org/series/UNRATE)
