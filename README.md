@@ -127,8 +127,8 @@ With all variables loaded in, the StatsModels library and API are used for regre
 
 
 
-- **Model 3: ```sm_ols('realized_ret_corn ~ market_risk_prem + ret_gdp + ret_cpi + UNRATE + sp500_rets + C_PRCP + C_SNOW + C_TMAX + C_TMIN', data=Commodities_DF).fit()```
-- Key Statistics: 
+- **Model 3**: ```sm_ols('realized_ret_corn ~ market_risk_prem + ret_gdp + ret_cpi + UNRATE + sp500_rets + C_PRCP + C_SNOW + C_TMAX + C_TMIN', data=Commodities_DF).fit()```
+  - Key Statistics: 
      | Statistic      | Value |
 | ----------- | ----------- |
 | R^2      | 0.061       |
@@ -155,8 +155,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
          
 *Soybeans Regressions* 
  
-- **Model 1**: ``` sm_ols('realized_ret_soybeans ~ (market_risk_prem)',data=Commodities_DF).fit()
- ```
+- **Model 1**: ``` sm_ols('realized_ret_soybeans ~ (market_risk_prem)',data=Commodities_DF).fit() ```
      - Key Statistics: 
      | Statistic      | Value |
 | ----------- | ----------- |
@@ -187,7 +186,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 
 
 - **Model 3**: ```sm_ols('realized_ret_corn ~ market_risk_prem + ret_gdp + ret_cpi + UNRATE + sp500_rets + C_PRCP + C_SNOW + C_TMAX + C_TMIN', data=Commodities_DF).fit()```
-- Key Statistics: 
+  - Key Statistics: 
      | Statistic      | Value |
 | ----------- | ----------- |
 | R^2      | 0.060       |
@@ -214,8 +213,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
  
 *Wheat Regressions* 
  
-- **Model 1**: ``` sm_ols('realized_ret_wheat ~ (market_risk_prem)',data=Commodities_DF).fit()
- ```
+- **Model 1**: ``` sm_ols('realized_ret_wheat ~ (market_risk_prem)',data=Commodities_DF).fit() ```
      - Key Statistics: 
      | Statistic      | Value |
 | ----------- | ----------- |
@@ -246,7 +244,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 
 
 - **Model 3**: ```sm_ols('realized_ret_wheat ~ market_risk_prem + ret_gdp + ret_cpi + UNRATE + sp500_rets + W_PRCP + W_SNOW + W_TMAX + W_TMIN' ,data=Commodities_DF).fit()```
-- Key Statistics: 
+  - Key Statistics: 
      | Statistic      | Value |
 | ----------- | ----------- |
 | R^2      | 0.067       |
@@ -270,7 +268,28 @@ With all variables loaded in, the StatsModels library and API are used for regre
          - β8: A single unit increase in max temperatures is associated with a 0.0000037% increase in wheat future returns, on average (ceteris paribus)
          - β9: A single unit increase in min temperatures is associated with a 0.0002% increase in wheat future returns, on average (ceteris paribus)
 
-Below is a heatmap that describes the relationship between all of our variables in the corn dataset.
+**Analysis of regressions**
+- Regressions got better as more independent variables as added. Model 3 had the highest R2 among all commodities.
+- Macroeconomic and climate variables DO help predict variations in futures returns.
+- Climate coefficients are generally very close to zero, indicating that they are very weakly correlated to returns.
+- The signs of these coefficients do make sense, however, as one would expect more precipitation to have a positive impact on crop returns, while the opposite would be the expectation for snowfall. 
+- The coefficient of the market risk premium went from being positive to strongly negative (for corn and soybeans) as other variables were added. This coefficient is essentially an estimate of the financial beta of these futures, so a negative beta is the logical expectation, given that equity and commodity market tend to move in opposite directions.
+- Most of coefficients observed for all models have a low likelihood to be truly statistically significant, as only a handful of them have a t-score above the threshold value of 1.96. 
+
+**Visualizing Regression Relationships**
+ - Visualization 1: Monthly Corn Futures Returns vs Select Independent Variables
+<img src="pics/Corn_Correlations_Reg.png" alt="Corn Correlation"/>
+
+
+ - Visualization 2: Monthly Soybeans Futures Returns vs Select Independent Variables
+<img src="pics/Soybeans_Correlations_Reg.png" alt="Soybean Correlation"/>
+
+
+ - Visualization 3: Monthly Wheat Futures Returns vs Select Independent Variables
+ <img src="pics/Wheat_Correlations_Reg.png" alt="Wheat Correlation"/>
+
+
+- Visualization 4: Heatmap of variables in the corn dataset.
 <img src="pics/corn_heat.jpg" alt="Corn Heatmap"/>
 
 
