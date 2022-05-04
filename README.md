@@ -363,7 +363,7 @@ In plotting the candidate models from our grid search, it became clear that our 
 
 While these scores may appear quite underwhelming, we believe that they are optimal for the type of model that we're building and given that data at our disposal. As previously mentioned, the machine learning model that produced these results was a Bayesian Ridge model. This is another type of a linear model supported by sklearn, that essentially combines the approaches to regularization that Ridge and Lasso models undertake, which is why the model features two alpha and two lambda parameters. The ultimate purpose of those parameters is to limit the likelihood that the beta coefficients associated with our x-variables significantly varied from zero. 
 
-<img src="pics/corn_candidates.png" alt="corn_candidates"/><img src="pics/soybeans_candidates.png" alt="soybeans_candidates"/><img src="pics/wheat_candidates.png" alt="wheat_candidates"/>
+<img src="pics/corn_models.jpg" alt="corn_candidates"/><img src="pics/soybean_models.jpg" alt="soybeans_candidates"/><img src="pics/wheat_models.jpg" alt="wheat_candidates"/>
 
 **Step 6: Test Model on Holdout Set**
 
