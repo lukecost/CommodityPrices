@@ -35,8 +35,8 @@ The main goal of this project is to explore whether it is possible to predict th
 - Domestic data only
 - Precipitation
 - Snowfall
-- Max Temperature
-- Min Temperature
+- Maximum Temperature
+- Minimum Temperature
 - Collected in McLean, IL; Whitman, WA; and Cass, ND
 - Data collected from https://www.ncdc.noaa.gov/
 
