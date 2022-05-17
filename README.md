@@ -39,7 +39,7 @@ The main goal of this project is to explore whether it is possible to predict th
 - [GDP](https://fred.stlouisfed.org/series/GDP)
 - [S&P500 Index Returns](https://www.investing.com/indices/us-spx-500-historical-data)
 
-pandas_datareader was used to scrape most of our macroeconomic data. A sample of the code is below.
+`pandas_datareader` was used to scrape most of our macroeconomic data. A sample of the code is below.
 
 ``` python
 start = datetime.datetime(1990, 1, 1) 
@@ -56,7 +56,7 @@ macro_df = pdr.data.DataReader(['GDP','CPIAUCSL','UNRATE'], 'fred', start, end)
 ## Data Cleaning <a name="cleaning"></a>
 Data was cleaned in this [file](https://github.com/lukecost/CommodityPrices/blob/main/data_cleaning.ipynb).
 
-#### Points of Interest
+### Points of Interest
 - GDP is computed quarterly, so the 'nearest' method is used to fill in missing GDP data.
 - Commodity price and climate data are merged with macroeconomic data to create one DataFrame.
 - Commodity prices are translated to float types, then used to calculate returns. **A sample of this is below.**
@@ -77,7 +77,7 @@ The goal of using regression on our data is to gain an initial understanding of 
 
 These regressions examine the relationship between commodity returns the data described above.
 
-#### Market Risk Premium Varibale
+### Market Risk Premium Varibale
 - Computed the monthly returns for the sp500.
 - Used the .rolling() function to compute a rolling, 60 month period average of the s&p 500 returns.
 - Calculated estimates for the market risk premium for each observation in our dataset by subtracting a monthly risk free - rate (0.407%) from our s&p 500 returns.
@@ -215,7 +215,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
          - β8: A single unit increase in max temperatures is associated with a 0.0000037% increase in wheat future returns, on average (ceteris paribus).
          - β9: A single unit increase in min temperatures is associated with a 0.0002% increase in wheat future returns, on average (ceteris paribus).
 
-#### Analysis of regressions
+### Analysis of regressions
 - Regressions got better as more independent variables as added. Model 3 had the highest R2 among all commodities.
 - Macroeconomic and climate variables DO help predict variations in futures returns.
 - Climate coefficients are generally very close to zero, indicating that they are very weakly correlated to returns.
@@ -223,7 +223,7 @@ With all variables loaded in, the StatsModels library and API are used for regre
 - The coefficient of the market risk premium went from being positive to strongly negative (for corn and soybeans) as other variables were added. This coefficient is essentially an estimate of the financial beta of these futures, so a negative beta is the logical expectation, given that equity and commodity market tend to move in opposite directions.
 - Most of coefficients observed for all models have a low likelihood to be truly statistically significant, as only a handful of them have a t-score above the threshold value of 1.96. 
 
-#### Visualizing Regression Relationships
+### Visualizing Regression Relationships
  - Visualization 1: Monthly Corn Futures Returns vs Select Independent Variables
 <img src="pics/Corn_Correlations_Reg.png" alt="Corn Correlation"/>
 
@@ -266,19 +266,11 @@ To preprocess the data, we created a pipe that would impute numerical NaN variab
 Preprocessing was repeated for wheat and soybeans.
 
 **Step 4: Create Pipeline** <br>
-We tried a variety of models to best fit our training set. Models we tried include:
-
-- **Ridge()**
-- **Lasso()**
-- **LinearRegression()**
-- **RandomForestRegressor()**
-- **BayesianRidge()**
-- **GradientBoostingRegressor()**
-- **ElasticNet()**
+We tried a variety of models to best fit our training set. Models we tried include ridge, lasso, OLS, random forest, Bayesian Ridge, gradient boosting, and elastic net.
 
 The following was the pipeline we used, which resulted in the best fit: 
 
-```
+```python
 gbr_pipe = Pipeline([
                 ('preproc', preproc_pipe),
                 ('feature_select', 'passthrough'),
@@ -290,14 +282,14 @@ gbr_pipe = Pipeline([
 
 We found that the parameters that highly influence the BayesianRidge() Model were the following:
 
-- *1. estim__alpha_1*
-- *2. estim__alpha_2*
-- *3. estim__lambda_1*
-- *4. estim__lambda_2*
+- *estim__alpha_1*
+- *estim__alpha_2*
+- *estim__lambda_1*
+- *estim__lambda_2*
 
 Because we were predicting future returns, we needed to use a different cross validation (cv) than simply KFold(10). Specifically it was imperative that the splits for the cross validation always had newer data for the holdout set, and older data for the training set, since the entire goal of this project is to test the possibility of using financial theory, macroeconomic, and climatological data to predict *future* commodity returns. As a result, we set up a type of TimeSeriesSplit cv model. For the calculation of our **cv**, see below: 
 
-```
+```python
 groups = X_train.groupby(X_train['DATE'].dt.year).groups
 min_periods_in_train = 5
 training_expanding_window = True
